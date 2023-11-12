@@ -64,4 +64,43 @@ update Calificaciones set Nombre= 'Maria' where idAlumno=3;
 
 delete from Calificaciones where idAlumno = 3;
 
-select * from Calificaciones;
+SELECT * FROM Calificaciones;
+
+--OPERADORES
+
+ /*
+ = IGUALDAD
+ < MENOR QUE
+ > MAYOR QUE
+ <= MAYOR IGUAL QUE
+ >= MENOR IGUAL QUE
+ != DIFERENTE DE
+ <>
+ */
+
+SELECT * FROM Calificaciones WHERE Calificacion != 9;
+
+ INSERT INTO Calificaciones VALUES(6, 'Marco', 7);
+ INSERT INTO Calificaciones VALUES(7, 'Maria', 7.8);
+ INSERT INTO Calificaciones VALUES(8, 'Ruben', 6.9);
+ INSERT INTO Calificaciones VALUES(9, 'Daniel', 9);
+ INSERT INTO Calificaciones VALUES(10, 'daniela', 8.5);
+
+ --OPERADOR LIKE
+SELECT * FROM Calificaciones WHERE Nombre LIKE 'M%';
+
+--VALOR NULL
+ INSERT INTO Calificaciones VALUES(11,NULL, 7);
+SELECT * FROM Calificaciones WHERE Nombre IS NOT NULL;
+
+SELECT * FROM Calificaciones WHERE Nombre IS NULL;
+
+--DISTINCT
+ INSERT INTO Calificaciones VALUES(13, 'Pedro', 8);
+SELECT DISTINCT Calificacion FROM Calificaciones;
+
+--OPERADOR AND Y OR NOT
+
+SELECT * FROM Calificaciones WHERE Nombre = 'Daniela' AND Calificacion < 9;
+SELECT * FROM Calificaciones WHERE Nombre = 'Daniela' OR Calificacion > 9;
+SELECT * FROM Calificaciones WHERE NOT Nombre = 'Daniela';
