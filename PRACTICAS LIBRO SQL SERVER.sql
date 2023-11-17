@@ -44,6 +44,8 @@ FILEGROWTH = 10%
 );
 GO
 
+use Ferias
+
 ALTER DATABASE Ferias
 REMOVE FILE Ferias1_log
 GO
