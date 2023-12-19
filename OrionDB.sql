@@ -53,4 +53,5 @@ SELECT * FROM usuarios;
 go
 select * from productos;
 go
+SELECT * FROM productos pro WHERE PRO.nombre = 'GUITARRA IBANEZ' ;
 
