@@ -24,39 +24,39 @@ go
 use PracticaYT;
 go
 
---create table empleado
---( 
---idEmpleado int,
---Nombre varchar(20),
---Puesto varchar(20)
---);
---go
+create table empleado
+( 
+idEmpleado int,
+Nombre varchar(20),
+Puesto varchar(20)
+);
+go
 
-/* Sentencias DML mas usadas
+--Sentencias DML mas usadas
 SELECT
 INSERT
 DELETE
 UPDATE
-   Sentencias DDL mas usadas
+--Sentencias DDL mas usadas
 CREATE
 DROP
-ALTER */
+ALTER 
 
---create table alumno
---( 
---idAlumno int primary key,
---Nombre varchar(20),
---Edad int
---);
---go
+create table alumno
+( 
+idAlumno int primary key,
+Nombre varchar(20),
+Edad int
+);
+go
 
---create table Calificaciones
---( 
---idAlumno int primary key,
---Nombre varchar(20),
---Calificacion float
---);
---go 
+create table Calificaciones
+( 
+idAlumno int primary key,
+Nombre varchar(20),
+Calificacion float
+);
+go 
 
 insert into Calificaciones values(5, 'Eduardo', 7.6);
 
