@@ -1,9 +1,34 @@
-﻿/*use master;
+﻿use master;
 go
 
-create database MusicListBD;*/
+create database MusicListBD;
+go 
 
---use MusicListBD;
+use MusicListBD;
+
+create table Banda_interprete
+(
+    Id_Banda_interprete int identity(1,1) not null,
+    Nombre varchar(25),
+    constraint PK_Banda_interprete primary key (Id_Banda_interprete)
+);
+go
+
+create table Generos
+(
+    Id_genero int identity(1,1) not null,
+    Genero varchar(25),
+    constraint PK_Generos primary key (Id_genero)
+);
+go
+
+create table Idiomas
+(
+    Id_idioma int identity(1,1) not null,
+    Idioma varchar(10),
+    constraint PK_Idiomas primary key (Id_idioma)
+);
+go
 
 create table temas
 (
@@ -25,11 +50,11 @@ create table temas
 );
 go
 
-create table Banda_interprete
+create table Locales
 (
-    Id_Banda_interprete int identity(1,1) not null,
-    Nombre varchar(25),
-    constraint PK_Banda_interprete primary key (Id_Banda_interprete)
+    Id_local int identity(1,1) not null,
+    Local varchar(25),
+    constraint PK_Locales primary key (Id_local)
 );
 go
 
@@ -38,30 +63,6 @@ create table Config_Banda
     Id_Conf int identity(1,1) not null,
     Configuracion varchar(25),
     constraint PK_Config_Banda primary key (Id_Conf)
-);
-go
-
-create table Generos
-(
-    Id_genero int identity(1,1) not null,
-    Genero varchar(25),
-    constraint PK_Generos primary key (Id_genero)
-);
-go
-
-create table Idiomas
-(
-    Id_idioma int identity(1,1) not null,
-    Idioma varchar(10),
-    constraint PK_Idiomas primary key (Id_idioma)
-);
-go
-
-create table Locales
-(
-    Id_local int identity(1,1) not null,
-    Local varchar(25),
-    constraint PK_Locales primary key (Id_local)
 );
 go
 
@@ -101,7 +102,9 @@ create table TemasProyecto
     Id_proyecto int not null,
     Id_tema int not null,
     constraint PK_TemasProyecto primary key (Id_TemasProyecto),
-    constraint Tocados_por_banda foreign key (Id_proyecto) references Proyecto(Id_proyecto),
+    constraint Tocados_por foreign key (Id_proyecto) references Proyecto(Id_proyecto),
     constraint Para_proyecto foreign key (Id_tema) references Temas(Id_tema)
 );
 go
+
+--drop database MusicListBD;
