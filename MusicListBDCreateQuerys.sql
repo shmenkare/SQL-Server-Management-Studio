@@ -1,9 +1,9 @@
-﻿use master;
+﻿/*use master;
 go
 
-create database MusicListBD;
+create database MusicListBD;*/
 
-use MusicListBD;
+--use MusicListBD;
 
 create table temas
 (
@@ -78,6 +78,9 @@ create table TemasLocales
     Id_TemasLocales int identity(1,1) not null,
     Id_local int not null,
     Id_tema int not null,
+    constraint PK_TemasLocales primary key (Id_TemasLocales),
+    constraint Permitidos_en foreign key (Id_local) references Locales(Id_local),
+    constraint Para_locales foreign key (Id_tema) references Temas(Id_tema)
 );
 go
 
@@ -85,7 +88,10 @@ create table TemasPorBanda
 (
     Id_TemasPorBanda int identity(1,1) not null,
     Id_Conf int not null,
-    Id_tema int not null
+    Id_tema int not null,
+    constraint PK_TemasPorBanda primary key (Id_TemasPorBanda),
+    constraint Tocados_por_banda foreign key (Id_Conf) references Config_Banda(Id_Conf),
+    constraint Temas_que_toca foreign key (Id_tema) references Temas(Id_tema)
 );
 go
 
@@ -93,6 +99,9 @@ create table TemasProyecto
 (
     Id_TemasProyecto int identity(1,1) not null,
     Id_proyecto int not null,
-    Id_tema int not null
+    Id_tema int not null,
+    constraint PK_TemasProyecto primary key (Id_TemasProyecto),
+    constraint Tocados_por_banda foreign key (Id_proyecto) references Proyecto(Id_proyecto),
+    constraint Para_proyecto foreign key (Id_tema) references Temas(Id_tema)
 );
 go
