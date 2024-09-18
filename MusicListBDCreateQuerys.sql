@@ -29,7 +29,7 @@ create table Idiomas
 );
 go
 
-create table temas
+create table Temas
 (
     Id_tema int identity(1,1) not null,
     Nombre varchar(50),
@@ -143,6 +143,17 @@ from MusicListDB.dbo.TemasPorBanda
 insert into MusicListBD.dbo.TemasProyecto(Id_proyecto,Id_tema)
 select Id_proyecto,Id_tema
 from MusicListDB.dbo.TemasProyecto
+
+select * from Temas;
+
+alter database MusicListDB
+modify name = MusicListDBOLD;
+
+alter database MusicListBD
+modify name = MusicListDB;
+
+
+
 
 
 
