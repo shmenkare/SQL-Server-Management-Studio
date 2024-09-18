@@ -25,7 +25,6 @@ DROP DATABASE Test;
 
 DROP DATABASE Ferias;
 
-USE Ferias;
 
 CREATE DATABASE Ferias;
 GO
