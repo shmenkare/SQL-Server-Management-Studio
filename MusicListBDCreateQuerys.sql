@@ -108,3 +108,7 @@ create table TemasProyecto
 go
 
 --drop database MusicListBD;
+
+insert into MusicListBD.dbo.temas(Nombre,Id_Banda_interprete,Id_genero,Id_idioma,Año,Tonalidad,Programa_GT,Programa_VE,Tema_montado,Duracion)
+select Nombre,Id_Banda_interprete,Id_genero,Id_idioma,Año,Tonalidad,Programa_GT,Programa_VE,Tema_montado,Duracion
+from MusicListDB.dbo.Temas;
