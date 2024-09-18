@@ -146,11 +146,8 @@ from MusicListDB.dbo.TemasProyecto
 
 select * from Temas;
 
-alter database MusicListDB
-modify name = MusicListDBOLD;
 
-alter database MusicListBD
-modify name = MusicListDB;
+
 
 
 
