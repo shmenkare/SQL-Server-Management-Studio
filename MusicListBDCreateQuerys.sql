@@ -146,6 +146,50 @@ from MusicListDB.dbo.TemasProyecto
 
 select * from Temas;
 
+--new--
+
+insert into .dbo.Banda_interprete(Nombre)
+select Nombre
+from MusicListDB.dbo.Banda_interprete
+
+insert into MusicListBD.dbo.Generos(Genero)
+select Genero
+from MusicListDB.dbo.Generos
+
+insert into MusicListBD.dbo.Idiomas(Idioma)
+select Idioma
+from MusicListDB.dbo.Idiomas
+
+insert into MusicListBD.dbo.temas(Nombre,Id_Banda_interprete,Id_genero,Id_idioma,Año,Tonalidad,Programa_GT,Programa_VE,Tema_montado,Duracion)
+select Nombre,Id_Banda_interprete,Id_genero,Id_idioma,Año,Tonalidad,Programa_GT,Programa_VE,Tema_montado,Duracion
+from MusicListDB.dbo.Temas;
+
+insert into MusicListBD.dbo.Config_Banda(Configuracion)
+select Configuracion
+from MusicListDB.dbo.Config_Banda
+
+insert into MusicListBD.dbo.Locales(Nombre)
+select Nombre
+from MusicListDB.dbo.Locales
+
+insert into MusicListBD.dbo.Proyecto(Nombre)
+select Nombre
+from MusicListDB.dbo.Proyecto
+
+insert into MusicListBD.dbo.TemasLocales(Id_local,Id_tema)
+select Id_local,Id_tema
+from MusicListDB.dbo.TemasLocales
+
+insert into MusicListBD.dbo.TemasPorBanda(Id_Conf,Id_tema)
+select Id_Conf,Id_tema
+from MusicListDB.dbo.TemasPorBanda
+
+insert into MusicListBD.dbo.TemasProyecto(Id_proyecto,Id_tema)
+select Id_proyecto,Id_tema
+from MusicListDB.dbo.TemasProyecto
+
+select * from Temas;
+
 
 
 
