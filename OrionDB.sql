@@ -55,3 +55,13 @@ select * from productos;
 go
 SELECT * FROM productos pro WHERE PRO.nombre = 'GUITARRA IBANEZ' ;
 
+
+use MusicListBD;
+
+select count(*) from Temas;
+
+select count(*) from TemasLocales;
+
+select * from Temas;
+
+select * from TemasLocales;
