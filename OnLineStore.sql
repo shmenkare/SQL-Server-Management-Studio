@@ -178,3 +178,5 @@ DBCC CHECKIDENT ('Pedido', RESEED, 0);
 
 insert into Carrito values(1,2,'Plancha',2,30);
 
+insert into Productos (Nombre,Cantidad,Precio,Id_Dep) values('Tostadora',30,28,1);
+
